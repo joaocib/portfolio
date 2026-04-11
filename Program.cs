@@ -6,9 +6,12 @@ using portfolio.Services;
 using System.Globalization;
 using Microsoft.JSInterop;
 
-
-
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
+#if RELEASE
+builder.HostEnvironment.BaseAddress = "/portfolio/";
+#endif
+
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
