@@ -42,7 +42,7 @@ jobs:
             run: dotnet publish -c Release --no-logo
 
         -   name: Rewrite base href for GitHub Pages
-            run: sed -i 's/<base href="\/" \/>/<base href="\/portfolio\/" \/>/g' bin/Release/net9.0/publish/wwwroot/index.html
+            run: sed -i 's/<base href="\/" \/>/<base href="\/portfolio" \/>/g' bin/Release/net9.0/publish/wwwroot/index.html
 
         # -   name: Add .nojekyll
         #     run: touch publish/wwwroot/.nojekyll
