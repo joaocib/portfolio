@@ -41,18 +41,23 @@ jobs:
         -   name: Publish
             run: dotnet publish -c Release --no-logo
 
+        -   name: Rewrite base href for GitHub Pages
+            run: |
+                REPO_NAME="${GITHUB_REPOSITORY#*/}"
+                sed -i "s|<base href=\"/\" />|<base href=\"/${REPO_NAME}/\" />|g" publish/wwwroot/index.html
+
         -   name: Add .nojekyll
             run: touch publish/wwwroot/.nojekyll
 
         -   name: Setup Pages
-            uses: actions/configure-pages@v4
+            uses: actions/configure-pages@v5
 
         -   name: Upload
             uses: actions/upload-pages-artifact@v4
             with:
-                path: bin/Release/net9.0/publish/wwwroot
+                path: publish/wwwroot
 
         -   name: Deploy
-            id: Deployment
+            id: deployment
             uses: actions/deploy-pages@v4
                       
