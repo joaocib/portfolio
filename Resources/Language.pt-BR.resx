@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Sobre mim</value>
+  </data>
+  <data name="AltPhrase" xml:space="preserve">
+    <value>Vamos mergulhar - pronto para lidar com a pressão de ambientes tecnologicamente enraizados</value>
+  </data>
+  <data name="Career" xml:space="preserve">
+    <value>Carreira</value>
+  </data>
+  <data name="TextCompumate" xml:space="preserve">
+    <value>Rapidamente fui promovido do suporte para o time de controle de qualidade e análise do sistema.
+Logo em seguida, passei a projetar, desenvolver, testar, publicar e manter esse mesmo software.
+Além do desenvolvimento, sou referência em solução de problemas de SQL e infraestrutura de TI.
+Minhas responsabilidades são integrações com APIs, serviços de redes sociais, IA e nosso site.</value>
+  </data>
+  <data name="IntroductionA" xml:space="preserve">
+    <value>Programo C# em qualquer projeto. Desde a criação de controles personalizados em frameworks legados, até a reinvenção deles nas plataformas web mais recentes.</value>
+  </data>
+  <data name="IntroductionB" xml:space="preserve">
+    <value>Desenvolvi diversos serviços e os migrei para VB6 e VB.NET através da interoperabilidade COM, muitos envolvendo recursos avançados como threads, código assíncrono e eventos tipados. Além disso, mantenho um site comercial de softwarehouse em arquitetura ASP NET MVC 5 com componentes de página Razor reutilizáveis. Recentemente, desenvolvi várias APIs minimalistas do zero, usando recursos como autenticação, roteamento dinâmico e documentação Swagger integrada.</value>
+  </data>
+  <data name="IntroductionC" xml:space="preserve">
+    <value>Atualmente, meu foco é o desenvolvimento com Blazor, também aproveitando esse conhecimento em projetos mobile usando .NET MAUI Blazor Hybrid. Também estou construindo nosso ecossistema de IA com ferramentas open-source e MCP.</value>
+  </data>
+  <data name="Learning" xml:space="preserve">
+    <value>APRENDENDO</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>PRINCIPAL</value>
+  </data>
+  <data name="MainPhrase" xml:space="preserve">
+    <value>Pronto para decolar - ansioso para explorar o desconhecido e construir o futuro da tecnologia</value>
+  </data>
+  <data name="Playing" xml:space="preserve">
+    <value>TENTANDO</value>
+  </data>
+  <data name="TextPMVA" xml:space="preserve">
+    <value>Ensinei colegas a usarem equipamentos de TI, ferramentas de produtividade e softwares públicos.
+Pela primeira vez, criei e publiquei uma página web real, usando HTML, CSS e JavaScript puro.
+Ajudei a coordenar processos essenciais em licitações, homologações e requisitos de sistema. Aprendi fundamentos dos relacionamentos corporativos, de equipe e da perspectiva do usuário.</value>
+  </data>
+  <data name="InfoPMVA" xml:space="preserve">
+    <value>Analista de TI, Suporte Técnico, 2018  - 2020</value>
+  </data>
+  <data name="InfoCompumate" xml:space="preserve">
+    <value>Desenvolvedor Pleno, Homologação, 2020 - hoje</value>
+  </data>
+  <data name="RefPMVA" xml:space="preserve">
+    <value>"O melhor estagiário" - Geraldo Ribeiro</value>
+  </data>
+  <data name="RefCompumate" xml:space="preserve">
+    <value>Braço direito do Mestre Supremo Richard</value>
+  </data>
+  <data name="Working" xml:space="preserve">
+    <value>Trabalhando nisso</value>
+  </data>
+  <data name="Myself" xml:space="preserve">
+    <value>Sou um desenvolvedor .NET pragmático — mas, acima de tudo, uma pessoa profundamente ligada a computadores. Não foi uma escolha;
+Aos 7 anos de idade, já neste século, tive meu primeiro contato com um: um Amiga, onde passei centenas de horas jogando Chuckie Egg.
+A partir disso, comecei a ter inúmeras experiências com tecnologia digital ao longo da minha infância.
+
+Pouco tempo depois, consegui um Windows 95, já bem antigo, onde comecei a gerenciar coisas como Paint, Office, impressoras, rede local e outras ferramentas — tudo sozinho.
+
+Isso aconteceu porque eu estava em um ambiente particularmente desafiador: não conhecia ninguém que pudesse me ajudar, a internet discada só funcionava depois da meia-noite,
+inacessível para um garoto ainda no ensino fundamental, e sem aulas de informática a vista por muito tempo.
+
+Essas dificuldades, seguidas daquela sensação única (ou um café) de vitória após resolver algo, me moldaram no profissional que sou hoje — destemido.</value>
+  </data>
+  <data name="Philosophy" xml:space="preserve">
+    <value>"Em meio ao debate entre programação orientada a objetos e programação funcional, eu fico com a programação orientada a desafios."</value>
+  </data>
+</root>

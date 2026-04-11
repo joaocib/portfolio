@@ -1,0 +1,68 @@
+﻿@inherits LayoutComponentBase
+@inject ThemingService theming
+
+@* Required *@
+<MudPopoverProvider />
+
+@* Needed for dialogs *@
+<MudDialogProvider />
+
+@* Needed for snackbars *@
+<MudSnackbarProvider />
+
+<MudThemeProvider Theme="@(theming.LightMode ? LightTeme : DarkTheme)" />
+
+<MudLayout>
+    <MudMainContent Class="pa-0">
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+
+    bool _lightMode = false;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        theming.OnChanged += StateHasChanged;
+    }
+
+    MudTheme LightTeme = new()
+    {
+        Typography = new Typography()
+        {
+            Default = new DefaultTypography()
+            {
+                FontFamily = new[] { "DM Serif Text", "serif" }
+            }
+        },
+        PaletteLight = new PaletteLight()
+        {
+            // Primary = "#FFFFFF",
+            // Surface = "#FFFFFF00",
+            // TextPrimary = "#FFFFFF",
+            Primary = "#000000",
+            Surface = "#00000000",
+            TextPrimary = "#000000",
+            
+        }
+    };
+
+    MudTheme DarkTheme = new MudTheme()
+    {
+        Typography = new Typography()
+        {
+            Default = new DefaultTypography()
+            {
+                FontFamily = new[] { "DM Serif Text", "serif" }
+            }
+        },
+        PaletteLight = new PaletteLight()
+        {
+            Primary = "#FFFFFF",
+            Surface = "#FFFFFF00",
+            TextPrimary = "#FFFFFF"
+        }
+    };
+}

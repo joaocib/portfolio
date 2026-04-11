@@ -1,0 +1,426 @@
+﻿@page "/"
+@using portfolio.Resources
+@inject IJSRuntime JS
+@inject ThemingService theming
+@inject IStringLocalizer<Language> Lang
+@inject NavigationManager Nav
+
+<PageTitle>Home</PageTitle>
+
+<div class="@(theming.LightMode ? "bub" : "blob" )"/>
+<div class="home-content">
+        <MudContainer MaxWidth="MaxWidth.False" Class="@ReturnBackground()">
+
+        <MudContainer Class="py-4">
+
+            <MudGrid Class="py-4">
+                <MudItem xs="9">
+
+                    <MudText Typo="Typo.h2" Class="py-2">
+
+                        João Carlos I. Baierle
+
+                        <MudButton Class="mr-0 pr-0" OnClick="@(async () => await SetLanguage("en"))">
+                            <MudImage Src="/images/en-us.png" Width="32" Style="cursor:pointer" />
+                        </MudButton>
+
+                        <MudButton Class="ml-0 pl-0" OnClick="@(async () => await SetLanguage("pt-BR"))">
+                            <MudImage Src="/images/pt-br.png" Width="32" Style="cursor:pointer" />
+                        </MudButton>
+
+                    </MudText>
+
+                    <MudText Typo="Typo.h6" Class="py-2">
+                        @Lang[ReturnPhrase()]
+                    </MudText>
+
+                    <MudText Class="py-2">
+                        <p>
+                            @Lang["IntroductionA"]
+                        </p>
+                        <p>
+                            @Lang["IntroductionB"]
+                        </p>
+                        <p>
+                            @Lang["IntroductionC"]
+                        </p>
+                    </MudText>
+
+                    <MudTabs>
+                        <MudTabPanel Text="@Lang["Main"]" Icon="@Icons.Material.Rounded.Verified">
+                            <MudGrid Class="py-2">
+                                <MudItem xs="12">
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/csharp.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/vb.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/html.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/dotnet.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/visual-studio.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/windows.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/sql.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/git.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/docker.svg"></MudImage>
+                                    </MudAvatar>
+                                </MudItem>
+                                <MudItem xs="6">
+                                    <MudButton Variant="Variant.Outlined"> 
+                                        .NET Core
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        MVC
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined"> 
+                                        Minimal API
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        Razor Pages
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        Blazor Server
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        IIS
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        ADO
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        DDD
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        SOLID
+                                    </MudButton>
+                                </MudItem>
+                            </MudGrid>
+
+                        </MudTabPanel>
+                        <MudTabPanel Text="EXTRA" Icon="@Icons.Material.Rounded.Star">
+                            <MudGrid Class="py-2">
+                                <MudItem xs="12">
+                                    <MudAvatar Rounded="true" style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/typescript.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar Rounded="true" style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/javascript.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/bootstrap.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/node-js.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/visual-studio-code.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/linux.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/mongodb.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/github.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/azure.svg"></MudImage>
+                                    </MudAvatar>
+                                </MudItem>
+                                <MudItem xs="6">
+                                    <MudButton Variant="Variant.Outlined"> EXPRESS </MudButton>
+                                    <MudButton Variant="Variant.Outlined"> HAPI</MudButton>
+                                    <MudButton Variant="Variant.Outlined"> BLAZOR WASM </MudButton>
+                                    <MudButton Variant="Variant.Outlined"> CSS </MudButton>
+                                    <MudButton Variant="Variant.Outlined"> XAML </MudButton>
+                                    <MudButton Variant="Variant.Outlined"> MVVM </MudButton>
+                                    <MudButton Variant="Variant.Outlined"> EF CORE </MudButton>
+                                    <MudButton Variant="Variant.Outlined"> CLEAN ARCHITECTURE </MudButton>
+                                    <MudButton Variant="Variant.Outlined"> LGPD </MudButton>
+                                </MudItem>
+                            </MudGrid>
+                        </MudTabPanel>
+                        <MudTabPanel Text="@Lang["Learning"]" Icon="@Icons.Material.Rounded.MenuBook">
+                            <MudGrid Class="py-2">
+                                <MudItem xs="12">
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/python.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/solidity.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/angular.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/aspire.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/cursor.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/apple.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/redis.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/jenkins.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/aws.svg"></MudImage>
+                                    </MudAvatar>
+                                </MudItem>
+                                <MudItem xs="6">
+                                    <MudButton Variant="Variant.Outlined">
+                                        TDD
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        IOS
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        DEVOPS
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        AI AGENTS
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        MCP
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        RAG
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        BLOCKCHAIN
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        WEB3
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        SMART CONTRACTS
+                                    </MudButton>
+                                </MudItem>
+                           </MudGrid>
+                        </MudTabPanel>
+                        <MudTabPanel Text="@Lang["Playing"]" Icon="@Icons.Material.Rounded.Interests">
+                            <MudGrid Class="py-2">
+                                <MudItem xs="12">
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/kotlin.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/flutter.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/c++.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/bun.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/unity.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/wordpress.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/firebase.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/kubernetes.svg"></MudImage>
+                                    </MudAvatar>
+                                    <MudAvatar style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/googlecloud.svg"></MudImage>
+                                    </MudAvatar>
+                                </MudItem>
+                                <MudItem xs="6">
+                                    <MudButton Variant="Variant.Outlined">
+                                        HTMX
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        MAC
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        N8N
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        BLENDER
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        LUA
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        AVALONIA
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        UNO
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        MICROSOFT 365
+                                    </MudButton>
+                                    <MudButton Variant="Variant.Outlined">
+                                        MAGENTO
+                                    </MudButton>
+                                </MudItem>
+
+                            </MudGrid>
+                        </MudTabPanel>
+                    </MudTabs>
+                </MudItem>
+
+
+                <MudItem xs="3" Class="d-flex justify-center align-center">
+                    <MudGrid>
+                        <MudItem xs="12" Class="d-flex justify-center">
+                            <MudSwitch @bind-Value="theming.LightMode" T="bool"
+                                       ThumbIcon="@ReturnThumbIcon()"
+                                       Style="transform: scale(1.25);" />
+                        </MudItem>
+                        <MudItem xs="12" Class="d-flex justify-center">
+                            <MudImage ObjectFit="ObjectFit.Cover" Fluid="true" Width="256" Class="rounded-circle" Src="@ReturnPhoto()" Alt="Myself" Elevation="25" />
+                        </MudItem>
+
+                        <MudItem xs="12" Class="d-flex justify-center">
+                            <MudLink Href="https://github.com/joaocib" Target="_blank" Style="text-decoration: none">
+                                <MudIconButton Size="Size.Large" Style="@($"color:{Colors.Shades.Black};")" Icon="@Icons.Custom.Brands.GitHub" />
+                            </MudLink>
+                            <MudLink Href="https://www.linkedin.com/in/joaocarlosib/" Target="_blank" Style="text-decoration: none">
+                                <MudIconButton Size="Size.Large" Style="@($"color:{Colors.Blue.Default};")" Icon="@Icons.Custom.Brands.LinkedIn" />
+                            </MudLink>
+                            <MudLink Href="mailto:joaoilhabaierle@gmail.com" Target="_blank" Style="text-decoration: none">
+                                <MudIconButton Size="Size.Large" Style="@($"color:{Colors.Shades.White};")" Icon="@Icons.Material.Filled.Mail" />
+                            </MudLink>
+                        </MudItem>
+
+                    </MudGrid>  
+                </MudItem>
+
+                <MudItem xs="12">
+                    <MudTabs>
+
+                        <MudTabPanel Text="@Lang["Career"]" Icon="@Icons.Material.Filled.BusinessCenter">
+
+                            <div class="d-flex align-content-center my-4">
+                                <MudPaper Class="flex-none mx-2" Elevation="6">
+                                    <MudAvatar Class="ma-4" Style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/compumate.png"></MudImage>
+                                    </MudAvatar>
+                                </MudPaper>
+                                <MudPaper Class="flex-none mx-2" Elevation="6">
+                                    <MudText Class="px-3 pt-3" Typo="Typo.h6"> Compumate Softwares Coorporativos </MudText>
+                                    <MudText Class="px-3">@Lang["InfoCompumate"]</MudText>
+                                    <MudLink Href="https://www.linkedin.com/in/richard-kuhleis/" Target="_blank" Style="text-decoration: underline">
+                                        <MudText Class="px-3 d-flex align-center">
+                                            <span>@Lang["RefCompumate"]</span>
+                                            <MudIcon Icon="@Icons.Custom.Brands.LinkedIn" Size="Size.Small" Class="ml-1" />
+                                        </MudText>
+                                    </MudLink>
+                                </MudPaper>
+                                <MudPaper Class="mx-2" Elevation="6">
+                                    <MudText Class="px-3">
+                                        @Lang["TextCompumate"]
+                                    </MudText>
+                                </MudPaper>
+                            </div>
+
+                            <div class="d-flex align-content-center my-4">
+                                <MudPaper Class="flex-none mx-2" Elevation="6">
+                                    <MudAvatar Class="ma-4" Style="background-color: transparent" Size="Size.Large">
+                                        <MudImage Src="/images/pmva.png"></MudImage>
+                                    </MudAvatar>
+                                </MudPaper>
+                                <MudPaper Class="flex-none mx-2" Elevation="6">
+                                    <MudText Class="px-3 pt-3" Typo="Typo.h6"> Prefeitura Municipal de Venâncio Aires </MudText>
+                                    <MudText Class="px-3"> @Lang["InfoPMVA"]</MudText>
+                                    <MudLink Href="mailto:ti@venancioaires.rs.gov.br" Target="_blank" Style="text-decoration: underline">
+                                        <MudText Class="px-3 d-flex align-center">
+                                            <span>@Lang["RefPMVA"]</span>
+                                            <MudIcon Icon="@Icons.Material.Rounded.Mail" Size="Size.Small" Class="ml-1" />
+                                        </MudText>
+                                    </MudLink>
+
+                                </MudPaper>
+                                <MudPaper Class="mx-2" Elevation="6">
+                                    <MudText Class="px-3">
+                                        @Lang["TextPMVA"]
+                                    </MudText>
+                                </MudPaper>
+                            </div>
+
+
+                        </MudTabPanel>
+
+                        <MudTabPanel Text="@Lang["About"]" Icon="@Icons.Material.Filled.Person">
+                            <MudGrid Class="my-4">
+                                <MudItem xs="12">
+                                    <MudText>
+                                        @Lang["Myself"]
+                                    </MudText>
+                                    <MudText class="my-2" Align="Align.Center">
+                                        @Lang["Philosophy"]
+                                    </MudText>
+                                </MudItem>
+                            </MudGrid>
+                        </MudTabPanel>
+                        <MudTabPanel Text="Apps" Icon="@Icons.Material.Filled.Code">
+                            <div class="d-flex justify-center align-center" style="height:100%;">
+                                <MudText Class="my-2" Align="Align.Center">
+                                    @Lang["Working"]
+                                </MudText>
+                            </div>
+                        </MudTabPanel>
+                        <MudTabPanel Text="Posts" Icon="@Icons.Material.Filled.BugReport">
+                            <div class="d-flex justify-center align-center" style="height:100%;">
+                                <MudText Class="my-2" Align="Align.Center">
+                                    @Lang["Working"]
+                                </MudText>
+                            </div>
+                        </MudTabPanel>
+                    </MudTabs>
+                </MudItem>
+            </MudGrid>
+        </MudContainer>
+</MudContainer>
+</div>
+@code {
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        //if (firstRender)
+            await JS.InvokeVoidAsync(theming.LightMode ? "initOceanCanvas" : "initGalaxyCanvas");
+    }
+
+    public string ReturnBackground() => theming.LightMode ? "light-background" : "dark-background";
+
+    public string ReturnPhoto() => theming.LightMode ? "/images/myself_marine.png" : "/images/myself_astro.png";
+
+    public string ReturnThumbIcon() => theming.LightMode ? Icons.Material.Filled.LightMode : Icons.Material.Filled.DarkMode;
+
+    public string ReturnPhrase() => theming.LightMode ? "AltPhrase" : "MainPhrase";
+
+    private async Task SetLanguage(string cultureCode)
+    {
+        var current = await JS.InvokeAsync<string>("culture.get");
+        if (!string.IsNullOrWhiteSpace(current) && current != cultureCode)
+        {
+            await JS.InvokeVoidAsync("culture.set", cultureCode);
+            Nav.NavigateTo(Nav.Uri, forceLoad: true);
+        }
+    }
+
+
+}
