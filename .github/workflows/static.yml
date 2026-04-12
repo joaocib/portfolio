@@ -1,7 +1,7 @@
 ﻿# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 env:
-  PUBLISH_DIR: portfolio/bin/Release/net10.0/publish/wwwroot
+  PUBLISH_DIR: portfolio/bin/Release/net9.0/publish/wwwroot
 
 on:
   # Runs on pushes targeting the default branch for the app's folder path
@@ -48,7 +48,7 @@ jobs:
         run: dotnet publish -c Release
 
       - name: Rewrite base href
-        uses: SteveSandersonMS/ghaction-rewrite-base-href@5b54862a8831e012d4f1a8b2660894415fdde8ec # v1.1.0
+        uses: SteveSandersonMS/ghaction-rewrite-base-href@v1.1.0
         with:
           html_path: ${{ env.PUBLISH_DIR }}/index.html
           base_href: /portfolio/
@@ -63,4 +63,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
+        uses: actions/deploy-pages@v4.0.5
