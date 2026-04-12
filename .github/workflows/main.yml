@@ -64,8 +64,8 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4 # v4.0.0
-        # with:
-        #   path: ${{ env.PUBLISH_DIR }}
+        with:
+          path: bin/Release/net9.0/publish/wwwroot
 
       - name: Deploy to GitHub Pages
         id: deployment
