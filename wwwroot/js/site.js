@@ -1,5 +1,4 @@
-﻿
-window.initGalaxyCanvas = () => {
+﻿window.initGalaxyCanvas = () => {
 
     var cursor = document.querySelector('.blob');
     let mouseX = window.innerWidth / 2;
@@ -47,8 +46,7 @@ window.initOceanCanvas = () => {
 
 }
 
-
 window.culture = {
-    get: () => window.localStorage['culture'],
-    set: (value) => window.localStorage['culture'] = value
+    get: () => localStorage.getItem('culture'),
+    set: (value) => localStorage.setItem('culture', value)
 };

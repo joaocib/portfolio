@@ -16,7 +16,6 @@ builder.Services.AddLocalization();
 
 builder.Services.AddMudServices();
 builder.Services.AddSingleton<ThemingService>();
-//builder.Services.AddSingleton<LanguageService>();
 
 var host = builder.Build();
 
@@ -26,7 +25,5 @@ var stored_culture = await js.InvokeAsync<string>("culture.get");
 var culture = new CultureInfo(stored_culture ?? "en");
 CultureInfo.DefaultThreadCurrentCulture = culture;
 CultureInfo.DefaultThreadCurrentUICulture = culture;
-
-
 
 await host.RunAsync();

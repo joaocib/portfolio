@@ -9,12 +9,42 @@
 
 <div class="@(theming.LightMode ? "bub" : "blob" )"/>
 <div class="home-content">
+
         <MudContainer MaxWidth="MaxWidth.False" Class="@ReturnBackground()">
 
         <MudContainer Class="py-4">
 
             <MudGrid Class="py-4">
-                <MudItem xs="9">
+
+                <MudItem xs="12" md="3" Class="d-flex justify-center align-center photo">
+                    <MudGrid>
+                        <MudItem xs="12" Class="d-flex justify-center">
+                            <MudSwitch @bind-Value="theming.LightMode" T="bool"
+                                       ThumbIcon="@ReturnThumbIcon()"
+                                       Style="transform: scale(1.25);" />
+                        </MudItem>
+                        <MudItem xs="12" Class="d-flex justify-center">
+                            <MudImage ObjectFit="ObjectFit.Cover" Fluid="true" Width="256" Class="rounded-circle" Src="@ReturnPhoto()" Alt="Myself" Elevation="25" />
+                        </MudItem>
+
+                        <MudItem xs="12" Class="d-flex justify-center">
+                            <MudLink Href="https://github.com/joaocib" Target="_blank" Style="text-decoration: none">
+                                <MudIconButton Size="Size.Large" Style="@($"color:{Colors.Shades.Black};")" Icon="@Icons.Custom.Brands.GitHub" />
+                            </MudLink>
+                            <MudLink Href="https://www.linkedin.com/in/joaocarlosib/" Target="_blank" Style="text-decoration: none">
+                                <MudIconButton Size="Size.Large" Style="@($"color:{Colors.Blue.Default};")" Icon="@Icons.Custom.Brands.LinkedIn" />
+                            </MudLink>
+                            <MudLink Href="mailto:joaoilhabaierle@gmail.com" Target="_blank" Style="text-decoration: none">
+                                <MudIconButton Size="Size.Large" Style="@($"color:{Colors.Shades.White};")" Icon="@Icons.Material.Filled.Mail" />
+                            </MudLink>
+                        </MudItem>
+
+                    </MudGrid>
+                </MudItem>
+
+
+
+                <MudItem xs="12" md="9" Class="photo-section">
 
                     <MudText Typo="Typo.h2" Class="py-2">
 
@@ -282,33 +312,6 @@
                     </MudTabs>
                 </MudItem>
 
-
-                <MudItem xs="3" Class="d-flex justify-center align-center">
-                    <MudGrid>
-                        <MudItem xs="12" Class="d-flex justify-center">
-                            <MudSwitch @bind-Value="theming.LightMode" T="bool"
-                                       ThumbIcon="@ReturnThumbIcon()"
-                                       Style="transform: scale(1.25);" />
-                        </MudItem>
-                        <MudItem xs="12" Class="d-flex justify-center">
-                            <MudImage ObjectFit="ObjectFit.Cover" Fluid="true" Width="256" Class="rounded-circle" Src="@ReturnPhoto()" Alt="Myself" Elevation="25" />
-                        </MudItem>
-
-                        <MudItem xs="12" Class="d-flex justify-center">
-                            <MudLink Href="https://github.com/joaocib" Target="_blank" Style="text-decoration: none">
-                                <MudIconButton Size="Size.Large" Style="@($"color:{Colors.Shades.Black};")" Icon="@Icons.Custom.Brands.GitHub" />
-                            </MudLink>
-                            <MudLink Href="https://www.linkedin.com/in/joaocarlosib/" Target="_blank" Style="text-decoration: none">
-                                <MudIconButton Size="Size.Large" Style="@($"color:{Colors.Blue.Default};")" Icon="@Icons.Custom.Brands.LinkedIn" />
-                            </MudLink>
-                            <MudLink Href="mailto:joaoilhabaierle@gmail.com" Target="_blank" Style="text-decoration: none">
-                                <MudIconButton Size="Size.Large" Style="@($"color:{Colors.Shades.White};")" Icon="@Icons.Material.Filled.Mail" />
-                            </MudLink>
-                        </MudItem>
-
-                    </MudGrid>  
-                </MudItem>
-
                 <MudItem xs="12">
                     <MudTabs>
 
@@ -396,12 +399,12 @@
         </MudContainer>
 </MudContainer>
 </div>
+
 @code {
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        //if (firstRender)
-            await JS.InvokeVoidAsync(theming.LightMode ? "initOceanCanvas" : "initGalaxyCanvas");
+        await JS.InvokeVoidAsync(theming.LightMode ? "initOceanCanvas" : "initGalaxyCanvas");
     }
 
     public string ReturnBackground() => theming.LightMode ? "light-background" : "dark-background";
@@ -415,12 +418,11 @@
     private async Task SetLanguage(string cultureCode)
     {
         var current = await JS.InvokeAsync<string>("culture.get");
-        if (!string.IsNullOrWhiteSpace(current) && current != cultureCode)
+
+        if (string.IsNullOrWhiteSpace(current) || current != cultureCode)
         {
             await JS.InvokeVoidAsync("culture.set", cultureCode);
             Nav.NavigateTo(Nav.Uri, forceLoad: true);
         }
     }
-
-
 }

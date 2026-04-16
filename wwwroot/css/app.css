@@ -224,4 +224,15 @@ code {
     position: relative;
     z-index: 1;
 }
- 
+
+
+/*Photo*/
+.photo-section {
+    order: -1;
+}
+
+@media (min-width: 960px) {
+    .photo-section {
+        order: 0;
+    }
+}
