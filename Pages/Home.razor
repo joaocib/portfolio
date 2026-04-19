@@ -42,20 +42,18 @@
                     </MudGrid>
                 </MudItem>
 
+                <MudItem xs="12" md="9">
 
-
-                <MudItem xs="12" md="9" Class="photo-section">
-
-                    <MudText Typo="Typo.h2" Class="py-2">
+                    <MudText Typo="Typo.h2" Class="py-2 name">
 
                         João Carlos I. Baierle
 
                         <MudButton Class="mr-0 pr-0" OnClick="@(async () => await SetLanguage("en"))">
-                            <MudImage Src="images/en-us.png" Width="32" Style="cursor:pointer" />
+                            <MudImage Src="images/en-us.png" Width="24" Style="cursor:pointer" />
                         </MudButton>
 
                         <MudButton Class="ml-0 pl-0" OnClick="@(async () => await SetLanguage("pt-BR"))">
-                            <MudImage Src="images/pt-br.png" Width="32" Style="cursor:pointer" />
+                            <MudImage Src="images/pt-br.png" Width="24" Style="cursor:pointer" />
                         </MudButton>
 
                     </MudText>
@@ -108,7 +106,7 @@
                                         <MudImage Src="images/docker.svg"></MudImage>
                                     </MudAvatar>
                                 </MudItem>
-                                <MudItem xs="6">
+                                <MudItem xs="12" md="6">
                                     <MudButton Variant="Variant.Outlined"> 
                                         .NET Core
                                     </MudButton>
@@ -171,7 +169,7 @@
                                         <MudImage Src="images/azure.svg"></MudImage>
                                     </MudAvatar>
                                 </MudItem>
-                                <MudItem xs="6">
+                                <MudItem xs="12" md="6">
                                     <MudButton Variant="Variant.Outlined"> EXPRESS </MudButton>
                                     <MudButton Variant="Variant.Outlined"> HAPI</MudButton>
                                     <MudButton Variant="Variant.Outlined"> BLAZOR WASM </MudButton>
@@ -215,7 +213,7 @@
                                         <MudImage Src="images/aws.svg"></MudImage>
                                     </MudAvatar>
                                 </MudItem>
-                                <MudItem xs="6">
+                                <MudItem xs="12" md="6">
                                     <MudButton Variant="Variant.Outlined">
                                         TDD
                                     </MudButton>
@@ -277,7 +275,7 @@
                                         <MudImage Src="images/googlecloud.svg"></MudImage>
                                     </MudAvatar>
                                 </MudItem>
-                                <MudItem xs="6">
+                                <MudItem xs="12" md="6">
                                     <MudButton Variant="Variant.Outlined">
                                         HTMX
                                     </MudButton>
@@ -313,62 +311,109 @@
                 </MudItem>
 
                 <MudItem xs="12">
+
                     <MudTabs>
 
                         <MudTabPanel Text="@Lang["Career"]" Icon="@Icons.Material.Filled.BusinessCenter">
 
-                            <div class="d-flex align-content-center my-4">
-                                <MudPaper Class="flex-none mx-2" Elevation="6">
-                                    <MudAvatar Class="ma-4" Style="background-color: transparent" Size="Size.Large">
-                                        <MudImage Src="images/compumate.png"></MudImage>
-                                    </MudAvatar>
-                                </MudPaper>
-                                <MudPaper Class="flex-none mx-2" Elevation="6">
-                                    <MudText Class="px-3 pt-3" Typo="Typo.h6"> Compumate Softwares Coorporativos </MudText>
-                                    <MudText Class="px-3">@Lang["InfoCompumate"]</MudText>
-                                    <MudLink Href="https://www.linkedin.com/in/richard-kuhleis/" Target="_blank" Style="text-decoration: underline">
-                                        <MudText Class="px-3 d-flex align-center">
-                                            <span>@Lang["RefCompumate"]</span>
-                                            <MudIcon Icon="@Icons.Custom.Brands.LinkedIn" Size="Size.Small" Class="ml-1" />
-                                        </MudText>
-                                    </MudLink>
-                                </MudPaper>
-                                <MudPaper Class="mx-2" Elevation="6">
-                                    <MudText Class="px-3">
-                                        @Lang["TextCompumate"]
-                                    </MudText>
-                                </MudPaper>
-                            </div>
+                            <MudGrid Class="my-2">
+                                <!-- Company Display -->
+                                <MudItem xs="12">
+                                    <MudPaper Elevation="6" Class="pa-4">
+                                        @if (selectedCompany == 0)
+                                        {
+                                            <div class="d-flex flex-column flex-md-row align-start">
+                                                <div class="flex-none mb-4 mb-md-0 mr-md-4">
+                                                    <div class="d-flex align-start mb-4">
+                                                        <MudAvatar Class="ma-3" Style="background-color: transparent" Size="Size.Large">
+                                                            <MudImage Src="images/compumate.png"></MudImage>
+                                                        </MudAvatar>
+                                                        <div>
+                                                            <MudText Typo="Typo.h5">Compumate Softwares Coorporativos</MudText>
+                                                            <MudText Typo="Typo.subtitle1">@Lang["InfoCompumate"]</MudText>
+                                                            <MudLink Href="https://www.linkedin.com/in/richard-kuhleis/" Target="_blank" Style="text-decoration: underline">
+                                                                <MudText Typo="Typo.body2" Class="d-flex align-center">
+                                                                    <span>@Lang["RefCompumate"]</span>
+                                                                    <MudIcon Icon="@Icons.Custom.Brands.LinkedIn" Size="Size.Small" Class="ml-1" />
+                                                                </MudText>
+                                                            </MudLink>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <MudDivider Vertical="true" FlexItem="true" Class="ma-3" />
+                                                <div class="flex-grow-1 my-2">
+                                                    <MudText Typo="Typo.body2">
+                                                        @Lang["TextCompumate"]
+                                                    </MudText>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="d-flex flex-column flex-md-row align-start">
+                                                <div class="flex-none mb-4 mb-md-0 mr-md-4">
+                                                    <div class="d-flex align-start mb-4">
+                                                        <MudAvatar Class="ma-3" Style="background-color: transparent" Size="Size.Large">
+                                                            <MudImage Src="images/pmva.png"></MudImage>
+                                                        </MudAvatar>
+                                                        <div>
+                                                            <MudText Typo="Typo.h5">Prefeitura Municipal de Venâncio Aires</MudText>
+                                                            <MudText Typo="Typo.subtitle1">@Lang["InfoPMVA"]</MudText>
+                                                            <MudLink Href="mailto:ti@venancioaires.rs.gov.br" Target="_blank" Style="text-decoration: underline">
+                                                                <MudText Typo="Typo.body2" Class="d-flex align-center">
+                                                                    <span>@Lang["RefPMVA"]</span>
+                                                                    <MudIcon Icon="@Icons.Material.Rounded.Mail" Size="Size.Small" Class="ml-1" />
+                                                                </MudText>
+                                                            </MudLink>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <MudDivider Vertical="true" FlexItem="true" Class="ma-2" />
+                                                <div class="flex-grow-1 my-2">
+                                                    <MudText Typo="Typo.body2">
+                                                        @Lang["TextPMVA"]
+                                                    </MudText>
+                                                </div>
+                                            </div>
+                                        }
+                                    </MudPaper>
+                                </MudItem>
 
-                            <div class="d-flex align-content-center my-4">
-                                <MudPaper Class="flex-none mx-2" Elevation="6">
-                                    <MudAvatar Class="ma-4" Style="background-color: transparent" Size="Size.Large">
-                                        <MudImage Src="images/pmva.png"></MudImage>
-                                    </MudAvatar>
-                                </MudPaper>
-                                <MudPaper Class="flex-none mx-2" Elevation="6">
-                                    <MudText Class="px-3 pt-3" Typo="Typo.h6"> Prefeitura Municipal de Venâncio Aires </MudText>
-                                    <MudText Class="px-3"> @Lang["InfoPMVA"]</MudText>
-                                    <MudLink Href="mailto:ti@venancioaires.rs.gov.br" Target="_blank" Style="text-decoration: underline">
-                                        <MudText Class="px-3 d-flex align-center">
-                                            <span>@Lang["RefPMVA"]</span>
-                                            <MudIcon Icon="@Icons.Material.Rounded.Mail" Size="Size.Small" Class="ml-1" />
-                                        </MudText>
-                                    </MudLink>
+                                <MudItem xs="12" Class="d-flex justify-center align-center py-1">
+                                    <MudIconButton Icon="@Icons.Material.Filled.ChevronLeft"
+                                                   OnClick="PreviousCompany"
+                                                   Style="@($"color:{Colors.Shades.White};")"
+                                                   Size="Size.Large"
+                                                   Disabled="@(selectedCompany == 0)" />
 
-                                </MudPaper>
-                                <MudPaper Class="mx-2" Elevation="6">
-                                    <MudText Class="px-3">
-                                        @Lang["TextPMVA"]
-                                    </MudText>
-                                </MudPaper>
-                            </div>
+                                    <div class="d-flex align-center mx-4">
+                                        <MudAvatar Style="background-color: transparent; cursor: pointer;"
+                                                   Size="Size.Medium"
+                                                   Class="@(selectedCompany == 0 ? "mx-1" : "mx-1 opacity-50")"
+                                                   @onclick="() => selectedCompany = 0">
+                                            <MudImage Src="images/compumate.png"></MudImage>
+                                        </MudAvatar>
 
+                                        <MudAvatar Style="background-color: transparent; cursor: pointer;"
+                                                   Size="Size.Medium"
+                                                   Class="@(selectedCompany == 1 ? "mx-1" : "mx-1 opacity-50")"
+                                                   @onclick="() => selectedCompany = 1">
+                                            <MudImage Src="images/pmva.png"></MudImage>
+                                        </MudAvatar>
+                                    </div>
+
+                                    <MudIconButton Icon="@Icons.Material.Filled.ChevronRight"
+                                                   OnClick="NextCompany"
+                                                   Size="Size.Large"
+                                                   Style="@($"color:{Colors.Shades.White};")"
+                                                   Disabled="@(selectedCompany == 1)" />
+                                </MudItem>
+                            </MudGrid>
 
                         </MudTabPanel>
 
                         <MudTabPanel Text="@Lang["About"]" Icon="@Icons.Material.Filled.Person">
-                            <MudGrid Class="my-4">
+                            <MudGrid Class="my-2">
                                 <MudItem xs="12">
                                     <MudText>
                                         @Lang["Myself"]
@@ -425,4 +470,20 @@
             Nav.NavigateTo(Nav.Uri, forceLoad: true);
         }
     }
+
+    private int selectedCompany = 0;
+
+    private void NextCompany()
+    {
+        if (selectedCompany < 1)
+            selectedCompany++;
+    }
+
+    private void PreviousCompany()
+    {
+        if (selectedCompany > 0)
+            selectedCompany--;
+    }
+
+
 }
